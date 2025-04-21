@@ -13,4 +13,344 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  display: grid;
+  gap: 100px;
+  font-family: "Inter-Variable", sans-serif;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.main {
+  display: grid;
+}
+
+.bg-gradient { 
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background: repeating-linear-gradient(90deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px), repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px), linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
+}
+
+
+.header {
+  display: grid;
+  justify-content: center;
+  width: 100%;
+}
+
+.entrance-sign {
+  padding: 128px 120px;
+  display: grid;
+  gap: 20px;
+  border: 2px solid #000;
+  justify-content: center;
+  margin-top: 100px;
+  background-color: #fff;
+}
+
+@media (width <= 375px) {
+  .entrance-sign {
+    padding: 120px 14px;
+  }
+}
+
+.entrance-title {
+  width: min-content;
+  height: fit-content;
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  font-family: 'PressStart2P', sans-serif;
+  font-weight: 400;
+  align-self: end;
+}
+
+.entrance-subtitle {
+  width: fit-content;
+  height: fit-content;
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  font-family: 'PressStart2P', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  justify-self: center;
+}
+
+.cards-list {
+  justify-self: center;
+  display: grid;
+  gap: 50px;
+  max-inline-size: 700px;
+}
+
+.card {
+  display: grid;
+  width: 100%;
+  background-color: #fff;
+}
+
+.card-title {
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+  border-left: 2px solid #000;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25px;
+  padding: 3px 10px;
+}
+
+@media (width <= 375px) {
+  .card-title {
+    line-height: 23px;
+  }
+}
+
+.image-container {
+  position: relative;
+  max-height: 696px;
+}
+
+@media (width <= 375px) {
+  .image-container {
+    max-height: 375px;
+  }
+}
+
+.card-image {
+  width: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.watermark {
+  font-family: 'PressStart2P', sans-serif;
+  font-size: 14px;
+  -webkit-text-stroke: 1px #fff;
+  position: absolute;
+  top: 27px;
+  right: 27px;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+}
+
+@media (width <= 375px) {
+  .watermark {
+    top: 25px;
+    right: 13px;
+  }
+}
+
+.card-info {
+  border: 2px solid #000;
+}
+
+.card-text {
+  padding: 27px 0 0 25px;
+  font-size: 18px;
+  max-width: 671px;
+}
+
+@media (width <= 375px) {
+  .card-text {
+    max-width: 345px;
+    padding: 24px 0 0 25px;
+  }
+}
+
+@media (width <= 375px) {
+  .width-fix {
+    max-width: 342px;
+  }
+}
+
+.memory-text {
+  padding: 27px 0 0 25px;
+  font-size: 18px;
+}
+
+.like-button {
+  padding: 21px 25px 20px 0;
+  justify-self: end;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+@media (width <= 375px) {
+  .like-button {
+    padding: 20px 25px 22px 0;
+  }
+}
+
+.card__icon-button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.card__icon-button:hover {
+  transform: scaleX(1);
+}
+
+.like-icon {
+  margin-top: 5px;
+}
+
+.card__like-button {
+  width: 130px;
+  padding: 6.5px 0;
+  border: 2px solid #000;
+  display: grid;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.button {
+  position: relative; /* Устанавливаем относительное позиционирование для кнопки */
+  overflow: hidden; /* Скрываем псевдоэлемент, выходящий за пределы кнопки */
+  color: #000; /* Цвет текста по умолчанию */
+  transition: color 0.3s ease; /* Плавность для цвета текста */
+}
+
+.button::after { 
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #000;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: 0.25s linear;
+  z-index: 0;
+}
+
+.button:hover::after{ 
+  transform: scaleX(1);
+}
+
+.button:hover { 
+  color: #fff;
+}
+
+
+.card__like-button:focus {
+  transition: box-shadow 0.3s ease;
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+
+
+.button__text {
+  font-family: 'PressStart2P', sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  position: relative;
+  z-index: 10;
+}
+
+@media (width <= 375px) {
+  .button__text {
+    align-self: start;
+    justify-self: center;
+  }
+}
+
+.save-button {
+  margin-top: 50px;
+  display: flex;
+  justify-self: center;
+  height: 55px;
+  border: 2px solid #000;
+  width: 337px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 103px;
+  cursor: pointer;
+  position: relative;
+}
+
+@media (width <= 375px) {
+  .save-button {
+    min-height: 80px;
+    gap: 0;
+  }
+}
+
+@media (width <= 375px) {
+  .save-button {
+    display: grid;
+    max-width: 308px;
+  }
+}
+
+.floppy { 
+  position: relative;
+  block-size: 21px;
+  inline-size: 21px;
+  fill: black;
+  z-index: 1;
+}
+
+@media (width <= 375px) {
+  .floppy {
+    block-size: 28px;
+    inline-size: 28px;
+    justify-self: center;
+    margin-top: 5px;
+  }
+}
+
+dialog[open] {
+  max-width: 353px;
+  height: 191px;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  padding: 30px;
+}
+
+@media (width <= 375px) {
+  dialog[open] {
+    max-width: 341px;
+    padding: 30px 42px;
+  }
+}
+
+.dialog-icon {
+  width: 39px;
+  height: 39px;
+  align-self: center;
+  justify-self: start;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+.modal-text {
+  font-family: 'PressStart2P', sans-serif;
+  font-size: 14px;
+  line-height: 21px; 
+}
+
+.confirm {
+  border: 2px solid #000;
+  padding: 7px 132px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  align-self: end;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+}
+
+.confirm.button:focus {
+  transition: box-shadow 0.3s ease; 
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+
+@media (width <= 375px) {
+  .confirm {
+    padding: 7px 123px;
+  }
 }
