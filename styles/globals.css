@@ -37,6 +37,10 @@ input {
   font-size: inherit;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 ul,
 ol {
   list-style: none;
